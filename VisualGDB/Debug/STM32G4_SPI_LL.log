@@ -1,0 +1,14 @@
+﻿  STM32G4_SPI_LL.c
+  STM32G4_SPI_LL.c: In function 'main':
+STM32G4_SPI_LL.c(48,15): warning :  passing argument 1 of 'spi_send_dma' from incompatible pointer type [-Wincompatible-pointer-types]
+     48 |  spi_send_dma(&myString, (uint32_t)strlen(myString));
+        |               ^~~~~~~~~
+        |               |
+        |               char (*)[16]
+  STM32G4_SPI_LL.c(31,28): note :  expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[16]'
+     31 | void spi_send_dma(uint8_t *data, uint32_t len);
+        |                   ~~~~~~~~~^~~~
+  Linking VisualGDB/Debug/STM32G4_SPI_LL...
+  ------------------- Memory utilization report -------------------
+  Used FLASH: 7372 bytes out of 128KB (5%) [+2616]
+  Used SRAM: 180 bytes out of 32KB (0%) [+128]

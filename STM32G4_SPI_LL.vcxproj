@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|VisualGDB">
+      <Configuration>Debug</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|VisualGDB">
+      <Configuration>Release</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{692FF97D-02C6-4C6B-8AB0-0C6E3E7C8117}</ProjectGuid>
+    <BSP_ID>com.sysprogs.arm.stm32</BSP_ID>
+    <BSP_VERSION>2020.01</BSP_VERSION>
+    <InPlaceBSPSubdir />
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)stm32.props</MCUPropertyListFile>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)stm32.props</MCUPropertyListFile>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>9.2.1/8.3.0/r1</ToolchainVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>9.2.1/8.3.0/r1</ToolchainVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ClCompile>
+      <CLanguageStandard>GNU99</CLanguageStandard>
+      <AdditionalIncludeDirectories>../STM32_COMM_LIBS;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG=1;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLinkerInputs>;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <LibrarySearchDirectories>;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>;%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
+      <LinkerScript />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ClCompile>
+      <CLanguageStandard>GNU99</CLanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="STM32G4_SPI_LL.c" />
+    <ClCompile Include="STM32_COMM_LIBS\CL_delay.c" />
+    <ClCompile Include="STM32_COMM_LIBS\CL_printMsg.c" />
+    <ClCompile Include="STM32_COMM_LIBS\CL_systemClockUpdate.c" />
+    <ClCompile Include="system_STM32G4xx.c" />
+    <ClInclude Include="STM32_COMM_LIBS\CL_CONFIG.h" />
+    <ClInclude Include="STM32_COMM_LIBS\CL_delay.h" />
+    <ClInclude Include="STM32_COMM_LIBS\CL_printMsg.h" />
+    <ClInclude Include="STM32_COMM_LIBS\CL_systemClockUpdate.h" />
+    <None Include="stm32.props" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\StartupFiles\startup_stm32g431xx.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_adc.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_comp.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_cordic.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_crc.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_crs.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_dac.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_dma.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_exti.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_fmac.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_fmc.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_gpio.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_hrtim.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_i2c.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_lptim.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_lpuart.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_opamp.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_pwr.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_rcc.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_rng.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_rtc.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_spi.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_tim.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_ucpd.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_usart.c" />
+    <ClCompile Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Src\stm32g4xx_ll_utils.c" />
+    <ClInclude Include="STM32G4xx_hal_conf.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_adc.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_bus.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_comp.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_cordic.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_cortex.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_crc.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_crs.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_dac.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_dma.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_dmamux.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_exti.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_fmac.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_fmc.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_gpio.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_hrtim.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_i2c.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_iwdg.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_lptim.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_lpuart.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_opamp.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_pwr.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_rcc.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_rng.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_rtc.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_spi.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_system.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_tim.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_ucpd.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_usart.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_utils.h" />
+    <ClInclude Include="$(BSP_ROOT)\STM32G4xxxx\STM32G4xx_HAL_Driver\Inc\stm32g4xx_ll_wwdg.h" />
+    <None Include="STM32G4_SPI_LL-Debug.vgdbsettings" />
+    <None Include="STM32G4_SPI_LL-Release.vgdbsettings" />
+    <None Include="stm32.xml" />
+  </ItemGroup>
+</Project>

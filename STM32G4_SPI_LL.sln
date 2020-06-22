@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "STM32G4_SPI_LL", "STM32G4_SPI_LL.vcxproj", "{692FF97D-02C6-4C6B-8AB0-0C6E3E7C8117}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|VisualGDB = Debug|VisualGDB
+		Release|VisualGDB = Release|VisualGDB
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{692FF97D-02C6-4C6B-8AB0-0C6E3E7C8117}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{692FF97D-02C6-4C6B-8AB0-0C6E3E7C8117}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{692FF97D-02C6-4C6B-8AB0-0C6E3E7C8117}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{692FF97D-02C6-4C6B-8AB0-0C6E3E7C8117}.Release|VisualGDB.Build.0 = Release|VisualGDB
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C50EB62E-BB82-4426-BDD4-01203FDC66CB}
+	EndGlobalSection
+EndGlobal
